@@ -30,7 +30,7 @@ OC版本：已更新至0.5.7
 2. 网卡：
     - 板载有线网卡完美驱动  
     - 板载Intel无线网卡wifi无解，不能驱动
-    - ~~板载蓝牙可用[这里](https://github.com/zxystd/IntelBluetoothFirmware/releases)的蓝牙注入，本人对蓝牙没需求，所以没有修复.~~已修复
+    - ~~板载蓝牙可用[这里](https://github.com/zxystd/IntelBluetoothFirmware/releases)的蓝牙注入，本人对蓝牙没需求，所以没有修复.~~ 已修复
     - 无线网卡：使用bcm94360CD无线网卡，wifi免驱
 3. 显卡：本人没有独立显卡，自带的UHD630显卡完美驱动。如果有独立显卡，看[XJN大佬的文章](https://blog.xjn819.com/?p=543)，可实现使用核心显卡给独立显卡进行加速。
 4. 其他实现的功能：  

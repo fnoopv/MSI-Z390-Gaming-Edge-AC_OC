@@ -14,6 +14,18 @@
 3. oc版本更新至0.5.8
 4. USB定制(即USBPorts.kext）删掉了内置蓝牙接口，使用94360cd蓝牙
 
+## 2020-06-19更新日志
+
+1. 版本更新至3.0（MacPro机型会一直提示内存问题，所以直接换机型了）
+2. OC更新至0.5.9版本
+3. 所有kext更新至最新版本（截至2020-06-19）
+4. USB定制删除Intel蓝牙，使用BCM94360CD蓝牙，免驱
+5. 由于机型变化，重新生成了CPU变频优化文件(kext中的CPUFroendProvider.kext,针对i5-9600k,其他CPU请自行生成)
+6. 添加weg,boot-args增加参数`agdpmod=pikera`（修复独显启动后无输出)、`shikivga=80`(修复独显启动后无数出)及`igfxfw=2`(核显优化，加入weg后不加此参数会导致核显锁频在0.33，加了此参数后核显`请求频率`会锁定在1.13，请自行斟酌是否添加此参数)
+7. 独显优化(参考[Bugprogrammer](https://www.bugprogrammer.me/2020/05/27/Hackintosh_for_Z490_10900K.html)博客)
+
+---
+
 msi mpg z390 gaming edge ac黑苹果OC引导  
 本人配置如下:
 
@@ -26,10 +38,12 @@ BIOS版本：7B17vA7
 ```
 
 ```text
-OC版本：已更新至0.5.8
+OC版本：已更新至0.5.9
 ```
 
 >使用之前请按照[黑果小兵的教程](https://blog.daliansky.net/OpenCore-BootLoader.html)设置好BIOS
+
+---
 
 ## 实现功能如下
 
@@ -39,7 +53,7 @@ OC版本：已更新至0.5.8
     - 板载Intel无线网卡wifi无解，不能驱动
     - ~~不使用板载intel蓝牙，如果需要，看[这里](https://github.com/zxystd/IntelBluetoothFirmware/releases)的蓝牙注入，本人对蓝牙没需求，所以没有修复.~~
     - 无线网卡：使用bcm94360CD无线网卡，蓝牙和wifi免驱，
-3. 显卡：5700XT免驱
+3. 显卡：5700XT免驱(添加优化)
 4. 其他实现的功能：  
     - 原生电源管理  
     - 原生nvram加载使用
@@ -55,5 +69,14 @@ OC版本：已更新至0.5.8
 1. ~~HDMI接口未测试，不确定是否能正常使用~~,因为使用独立显卡，屏蔽了核显，确定不能用
 2. ~~睡眠目前没有问题，有问题可参考XJN大佬的文章进行修复~~ 确定睡眠没有问题
 3. ~~使用了USBInjectAll.kext进行usb注入，没有做USB定制，后续再做~~ 已进行定制
+4. 启动第二阶段黑屏10s左右
 
 >注意：config.plist文件关闭了-v跑码，关闭了OC引导菜单显示，初次安装时请选择打开，方便排查问题
+
+## 鸣谢
+
+[bugprogrammer](https://www.bugprogrammer.me/)  
+[黑果小兵](https://blog.daliansky.net)  
+[XJN819](https://blog.xjn819.com/)  
+[独行秀才](https://shuiyunxc.gitee.io/)  
+以及提供驱动、引导、教程的[acidanthera](https://github.com/acidanthera)、[Rehabman](https://github.com/rehabman)等  

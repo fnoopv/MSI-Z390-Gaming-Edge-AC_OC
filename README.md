@@ -21,8 +21,24 @@
 3. 所有kext更新至最新版本（截至2020-06-19）
 4. USB定制删除Intel蓝牙，使用BCM94360CD蓝牙，免驱
 5. 由于机型变化，重新生成了CPU变频优化文件(kext中的CPUFroendProvider.kext,针对i5-9600k,其他CPU请自行生成)
-6. 添加weg,boot-args增加参数`agdpmod=pikera`（修复独显启动后无输出)、`shikivga=80`(修复独显启动后无数出)及`igfxfw=2`(核显优化，加入weg后不加此参数会导致核显锁频在0.33，加了此参数后核显`请求频率`会锁定在1.13，请自行斟酌是否添加此参数)
+6. 添加weg,boot-args增加参数`agdpmod=pikera`（修复独显启动后无输出)、`shikivga=80`(修复独显启动后无输出)及`igfxfw=2`(核显优化，加入weg后不加此参数会导致核显锁频在0.33，加了此参数后核显`请求频率`会锁定在1.13，请自行斟酌是否添加此参数)
 7. 独显优化(参考[Bugprogrammer](https://www.bugprogrammer.me/2020/05/27/Hackintosh_for_Z490_10900K.html)博客)
+
+## 2020-07-19更新日志
+
+1. 强烈建议更新`BIOS`版本至`7B17vA9`，该版本主要改进了内存兼容性
+
+2. 去除无用的`ACPI`补丁`dsdt-no-ec.aml`,因为`dsdt`中的`EC`部件本就无效
+
+3. `ACPI`添加`SSDT-DMAC` `SSDT-MCHC` `SSDT-MEM2` `SSDT-PMCR` `SSDT-PPMC`五个补丁，用于添加缺失的部件，详见[OC-little](https://github.com/daliansky/OC-little/tree/master/06-%E6%B7%BB%E5%8A%A0%E7%BC%BA%E5%A4%B1%E7%9A%84%E9%83%A8%E4%BB%B6)
+
+4. `ACPI`添加`SSDT-GPRW`以及`patch`补丁，用于修复睡眠问题
+
+5. 去除`CPU`变频优化，因为可能导致卡顿问题
+
+6. 更新所有kexts至最新版本，截至`2020-07-19`
+
+7. 引导参数去掉`shikigva=80`
 
 ---
 

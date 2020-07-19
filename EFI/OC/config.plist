@@ -16,14 +16,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>no EC</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-no-EC.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>remove AWAC to fix rtc</string>
 				<key>Enabled</key>
 				<true/>
@@ -32,7 +24,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>use xcpm</string>
+				<string>use cpu power manage</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -48,11 +40,51 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-GPRW</string>
+				<string>solve sleep</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
 				<string>SSDT-GPRW.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>add missing device</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-DMAC.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>add missing device</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-MCHC.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>add missing device</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-MEM2.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>add missing device</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-PMCR.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>add missing device</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-PPMC.aml</string>
 			</dict>
 		</array>
 		<key>Delete</key>
@@ -198,50 +230,11 @@
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>AwCYPg==</data>
-				<key>device-id</key>
-				<data>mD4AAA==</data>
-				<key>device_type</key>
-				<string>Display controller</string>
-				<key>framebuffer-fbmem</key>
-				<data>AACQAA==</data>
+				<data>AwCRPg==</data>
 				<key>framebuffer-patch-enable</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-stolenmem</key>
 				<data>AAAwAQ==</data>
-				<key>hda-gfx</key>
-				<string>onboard-2</string>
-				<key>model</key>
-				<string>Intel UHD Graphics 630</string>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>@0,name</key>
-				<string>ATY,Adder</string>
-				<key>@1,name</key>
-				<string>ATY,Adder</string>
-				<key>@2,name</key>
-				<string>ATY,Adder</string>
-				<key>@3,name</key>
-				<string>ATY,Adder</string>
-				<key>AAPL00,DualLink</key>
-				<data>AQAAAA==</data>
-				<key>ATY,Copyright</key>
-				<string>Copyright AMD Inc. All Rights Reserved. 2005-2020</string>
-				<key>ATY,DeviceName</key>
-				<string>W5700X</string>
-				<key>ATY,FamilyName</key>
-				<string>Radeon Pro</string>
-				<key>Force_Load_FalconSMUFW</key>
-				<true/>
-				<key>device_type</key>
-				<string>ATY,AdderParent</string>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-				<key>model</key>
-				<string>Radeon Pro W5700X</string>
-				<key>name</key>
-				<string>ATY_GPU</string>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -443,38 +436,6 @@
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>CPUFriend.kext</string>
-				<key>Comment</key>
-				<string>CPUFriend</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/CPUFriend</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>CPUFriendDataProvider.kext</string>
-				<key>Comment</key>
-				<string>CPUFriendDataProvider</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string></string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
 		</array>
 		<key>Block</key>
 		<array>
@@ -628,7 +589,7 @@
 			<key>DisableRtcChecksum</key>
 			<false/>
 			<key>DisableIoMapper</key>
-			<true/>
+			<false/>
 			<key>DummyPowerManagement</key>
 			<false/>
 			<key>ExternalDiskIcons</key>
@@ -790,13 +751,13 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>darkwake=0 agdpmod=pikera shikigva=80 igfxfw=2</string>
+				<string>darkwake=0 agdpmod=pikera</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
 				<data>emgtSGFuczoyNTI=</data>
 				<key>SystemAudioVolume</key>
-				<data>Rg==</data>
+				<data>YA==</data>
 				<key>bootercfg</key>
 				<string>log=0 debug=0 level=0</string>
 			</dict>
@@ -938,7 +899,7 @@
 			<key>KeySupportMode</key>
 			<string>Auto</string>
 			<key>KeySwap</key>
-			<false/>
+			<true/>
 			<key>PointerSupport</key>
 			<false/>
 			<key>PointerSupportMode</key>
@@ -951,7 +912,7 @@
 		<key>Output</key>
 		<dict>
 			<key>TextRenderer</key>
-			<string>BuiltinGraphics</string>
+			<string>SystemGraphics</string>
 			<key>ConsoleMode</key>
 			<string></string>
 			<key>Resolution</key>
@@ -959,7 +920,7 @@
 			<key>ClearScreenOnModeSwitch</key>
 			<false/>
 			<key>IgnoreTextInGraphics</key>
-			<false/>
+			<true/>
 			<key>ProvideConsoleGop</key>
 			<true/>
 			<key>DirectGopRendering</key>
@@ -967,7 +928,7 @@
 			<key>ReconnectOnResChange</key>
 			<false/>
 			<key>ReplaceTabWithSpace</key>
-			<false/>
+			<true/>
 			<key>SanitiseClearScreen</key>
 			<true/>
 		</dict>
@@ -986,7 +947,7 @@
 			<key>AppleKeyMap</key>
 			<false/>
 			<key>AppleSmcIo</key>
-			<true/>
+			<false/>
 			<key>AppleUserInterfaceTheme</key>
 			<false/>
 			<key>DataHub</key>

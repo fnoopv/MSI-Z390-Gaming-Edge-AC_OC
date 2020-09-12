@@ -46,6 +46,10 @@
 
 2. kext更新至最新，截至`2020-09-07`
 
+## 2020-09-12 更新日志
+
+1. OC更新至0.6.1
+
 ---
 
 msi mpg z390 gaming edge ac黑苹果OC引导  
@@ -60,7 +64,7 @@ BIOS版本：7B17vA7
 ```
 
 ```text
-OC版本：已更新至0.5.9
+OC版本：已更新至0.6.1
 ```
 
 >使用之前请按照[黑果小兵的教程](https://blog.daliansky.net/OpenCore-BootLoader.html)设置好BIOS

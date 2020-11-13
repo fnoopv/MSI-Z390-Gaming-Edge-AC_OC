@@ -499,6 +499,8 @@
 		<key>Block</key>
 		<array>
 			<dict>
+				<key>Arch</key>
+				<string>Any</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
@@ -592,15 +594,17 @@
 			<false/>
 			<key>CustomSMBIOSGuid</key>
 			<false/>
-			<key>DisableRtcChecksum</key>
-			<false/>
 			<key>DisableIoMapper</key>
-			<false/>
+			<true/>
 			<key>DisableLinkeditJettison</key>
+			<false/>
+			<key>DisableRtcChecksum</key>
 			<false/>
 			<key>ExtendBTFeatureFlags</key>
 			<false/>
 			<key>ExternalDiskIcons</key>
+			<false/>
+			<key>ForceSecureBootScheme</key>
 			<false/>
 			<key>IncreasePciBarSize</key>
 			<false/>
@@ -684,7 +688,7 @@
 				<key>Comment</key>
 				<string>Windows 10</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Name</key>
 				<string>Windows 10</string>
 				<key>Path</key>
@@ -827,18 +831,20 @@
 	<dict>
 		<key>Automatic</key>
 		<true/>
+		<key>CustomMemory</key>
+		<false/>
 		<key>Generic</key>
 		<dict>
 			<key>AdviseWindows</key>
 			<true/>
 			<key>SystemMemoryStatus</key>
 			<string>Auto</string>
-			<key>MLB</key>
-			<string>C02006102QXLNV91M</string>
-			<key>ProcessorType</key>
-			<integer>0</integer>
 			<key>ROM</key>
 			<data>ANhh0TrG</data>
+			<key>ProcessorType</key>
+			<integer>0</integer>
+			<key>MLB</key>
+			<string>C02006102QXLNV91M</string>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
@@ -859,8 +865,6 @@
 	</dict>
 	<key>UEFI</key>
 	<dict>
-		<key>ConnectDrivers</key>
-		<true/>
 		<key>APFS</key>
 		<dict>
 			<key>EnableJumpstart</key>
@@ -876,22 +880,16 @@
 			<key>MinVersion</key>
 			<integer>0</integer>
 		</dict>
-		<key>Drivers</key>
-		<array>
-			<string>HfsPlus.efi</string>
-			<string>OpenRuntime.efi</string>
-			<string>OpenUsbkbDxe.efi</string>
-		</array>
 		<key>Audio</key>
 		<dict>
 			<key>AudioCodec</key>
 			<integer>0</integer>
 			<key>AudioDevice</key>
 			<string>PciRoot(0x0)/Pci(0x1f,0x3)</string>
-			<key>AudioSupport</key>
-			<false/>
 			<key>AudioOut</key>
 			<integer>0</integer>
+			<key>AudioSupport</key>
+			<false/>
 			<key>MinimumVolume</key>
 			<integer>20</integer>
 			<key>PlayChime</key>
@@ -899,6 +897,14 @@
 			<key>VolumeAmplifier</key>
 			<integer>1000</integer>
 		</dict>
+		<key>ConnectDrivers</key>
+		<true/>
+		<key>Drivers</key>
+		<array>
+			<string>HfsPlus.efi</string>
+			<string>OpenRuntime.efi</string>
+			<string>OpenUsbkbDxe.efi</string>
+		</array>
 		<key>Input</key>
 		<dict>
 			<key>KeyFiltering</key>
@@ -927,6 +933,8 @@
 			<key>ConsoleMode</key>
 			<string></string>
 			<key>DirectGopRendering</key>
+			<false/>
+			<key>ForceResolution</key>
 			<false/>
 			<key>IgnoreTextInGraphics</key>
 			<true/>

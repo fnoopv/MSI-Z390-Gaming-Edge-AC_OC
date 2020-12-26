@@ -63,6 +63,11 @@
 2. kexts更新至最新版本
 3. 支持无痛升级至`bigsur`
 
+## 2020-12-26更新日志
+
+1. OC更新至0.6.4
+2. kexts更新至最新版本
+
 ---
 
 msi mpg z390 gaming edge ac黑苹果OC引导  
